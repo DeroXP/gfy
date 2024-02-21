@@ -8,27 +8,30 @@ openButton.style.zIndex = '9999'; // Set a z-index value
 document.body.appendChild(openButton);
 
 let chatVisible = false;
+let chatContainer;  // Move declaration outside the click event
 
 openButton.addEventListener('click', async () => {
     chatVisible = !chatVisible;
 
     if (chatVisible) {
         try {
-            const chatContainer = document.createElement('iframe');
-            chatContainer.id = 'chatContainer';
-            chatContainer.style.position = 'fixed';
-            chatContainer.style.top = '50%';
-            chatContainer.style.left = '50%';
-            chatContainer.style.transform = 'translate(-50%, -50%)';
-            chatContainer.style.width = '400px';
-            chatContainer.style.height = '600px';
-            chatContainer.style.zIndex = '10000'; // Set a higher z-index value than the button
+            if (!chatContainer) {
+                chatContainer = document.createElement('iframe');
+                chatContainer.id = 'chatContainer';
+                chatContainer.style.position = 'fixed';
+                chatContainer.style.top = '50%';
+                chatContainer.style.left = '50%';
+                chatContainer.style.transform = 'translate(-50%, -50%)';
+                chatContainer.style.width = '400px';
+                chatContainer.style.height = '600px';
+                chatContainer.style.zIndex = '10000'; // Set a higher z-index value than the button
 
-            // Use the sandbox attribute to create a more controlled environment
-            chatContainer.sandbox = 'allow-scripts allow-same-origin';
+                // Use the sandbox attribute to create a more controlled environment
+                chatContainer.sandbox = 'allow-scripts allow-same-origin';
 
-            // Set the iframe source to the Express server root URL
-            chatContainer.src = 'http://localhost:3000/';
+                // Set the iframe source to the Express server root URL
+                chatContainer.src = 'http://localhost:3000/';
+            }
 
             // Delay the iframe creation to avoid autofocusing issues
             await new Promise(resolve => setTimeout(resolve, 500));
@@ -38,9 +41,9 @@ openButton.addEventListener('click', async () => {
             console.error('Error creating iframe:', error);
         }
     } else {
-        const chatContainer = document.getElementById('chatContainer');
         if (chatContainer) {
-            chatContainer.parentNode.removeChild(chatContainer);
+            chatContainer.remove();  // Updated to remove the iframe directly
+            chatContainer = null;  // Reset the chatContainer variable
         }
     }
 
