@@ -24,6 +24,9 @@ openButton.addEventListener('click', async () => {
             chatContainer.style.height = '600px';
             chatContainer.style.zIndex = '10000'; // Set a higher z-index value than the button
 
+            // Use the sandbox attribute to create a more controlled environment
+            chatContainer.sandbox = 'allow-scripts allow-same-origin';
+
             // Set the iframe source to the Express server root URL
             chatContainer.src = 'http://localhost:3000/';
 
