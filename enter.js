@@ -4,11 +4,11 @@ openButton.id = 'openButton';
 openButton.style.position = 'fixed';
 openButton.style.bottom = '10px';
 openButton.style.right = '10px';
-openButton.style.zIndex = '9999'; // Set a z-index value
+openButton.style.zIndex = '9999';
 document.body.appendChild(openButton);
 
 let chatVisible = false;
-let chatContainer;  // Move declaration outside the click event
+let chatContainer;
 
 openButton.addEventListener('click', async () => {
     chatVisible = !chatVisible;
@@ -24,16 +24,13 @@ openButton.addEventListener('click', async () => {
                 chatContainer.style.transform = 'translate(-50%, -50%)';
                 chatContainer.style.width = '400px';
                 chatContainer.style.height = '600px';
-                chatContainer.style.zIndex = '10000'; // Set a higher z-index value than the button
+                chatContainer.style.zIndex = '10000';
 
-                // Use the sandbox attribute to create a more controlled environment
                 chatContainer.sandbox = 'allow-scripts allow-same-origin';
 
-                // Set the iframe source to the Express server root URL
                 chatContainer.src = 'http://localhost:3000/';
             }
 
-            // Delay the iframe creation to avoid autofocusing issues
             await new Promise(resolve => setTimeout(resolve, 500));
 
             document.body.appendChild(chatContainer);
@@ -42,8 +39,8 @@ openButton.addEventListener('click', async () => {
         }
     } else {
         if (chatContainer) {
-            chatContainer.remove();  // Updated to remove the iframe directly
-            chatContainer = null;  // Reset the chatContainer variable
+            chatContainer.remove();
+            chatContainer = null;
         }
     }
 
