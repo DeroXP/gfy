@@ -28,7 +28,7 @@ openButton.addEventListener('click', async () => {
 
                 chatContainer.sandbox = 'allow-scripts allow-same-origin';
 
-                chatContainer.src = 'http://localhost:3000/';
+                chatContainer.src = 'https://chat.openai.com/';
             }
 
             await new Promise(resolve => setTimeout(resolve, 500));
