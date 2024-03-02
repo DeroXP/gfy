@@ -1,4 +1,3 @@
-// Create a chat modal function
 function createChatModal(chatUrl) {
   const modal = document.createElement('div');
   modal.id = 'chatModal';
@@ -37,6 +36,7 @@ function createChatModal(chatUrl) {
   iframe.style.width = '100%';
   iframe.style.height = '100%';
   iframe.style.border = 'none';
+  iframe.sandbox = 'allow-same-origin allow-scripts allow-forms'; // Add this line
 
   modal.appendChild(iframe);
 
