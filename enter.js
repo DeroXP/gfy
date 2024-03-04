@@ -26,7 +26,6 @@ let chatModalVisible = false;
     });
 })();
 
-// Chat Modal Function
 function createChatModal(chatUrl) {
     const chatModal = document.createElement('div');
     chatModal.id = 'chatModal';
@@ -52,7 +51,7 @@ function createChatModal(chatUrl) {
     closeChatButton.style.cursor = 'pointer';
 
     closeChatButton.addEventListener('click', () => {
-        chatModal.style.display = 'none';
+        document.body.removeChild(chatModal);
         document.getElementById('toggleChatButton').innerText = 'Open Chat';
         chatModalVisible = false;
     });
