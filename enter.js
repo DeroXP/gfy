@@ -77,8 +77,8 @@ function createChatModal(chatUrl) {
 
     document.addEventListener("mousemove", (e) => {
         if (isDragging) {
-            const x = e.clientX - offsetX;
-            const y = e.clientY - offsetY;
+            const x = Math.max(0, Math.min(e.clientX - offsetX, window.innerWidth - chatModal.clientWidth));
+            const y = Math.max(0, Math.min(e.clientY - offsetY, window.innerHeight - chatModal.clientHeight));
             chatModal.style.left = `${x}px`;
             chatModal.style.top = `${y}px`;
         }
