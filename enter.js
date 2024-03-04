@@ -15,29 +15,38 @@ let chatModal;
     toggleChatButton.style.zIndex = '9999';
     document.body.appendChild(toggleChatButton);
 
+    // Add input field and search button
+    const inputContainer = document.createElement('div');
+    inputContainer.style.position = 'absolute';
+    inputContainer.style.top = '0';
+    inputContainer.style.right = '130px'; // adjust position as needed
+    inputContainer.style.height = '20px'; // same height as minimize button
+    inputContainer.style.display = 'flex';
+
     const input = document.createElement('input');
     input.type = 'text';
     input.placeholder = 'Enter link here';
-    input.style.position = 'fixed';
-    input.style.bottom = '10px';
-    input.style.right = '150px';
-    input.style.zIndex = '9999';
-    document.body.appendChild(input);
+    input.style.flexGrow = '1';
+    input.style.border = 'none';
+    input.style.backgroundColor = '#4b4b4b'; // same background color as minimize button
+    input.style.color = 'white';
+    inputContainer.appendChild(input);
 
     const searchButton = document.createElement('button');
     searchButton.innerText = 'Search';
-    searchButton.style.position = 'fixed';
-    searchButton.style.bottom = '10px';
-    searchButton.style.right = '230px';
-    searchButton.style.zIndex = '9999';
-    document.body.appendChild(searchButton);
-
+    searchButton.style.padding = '5px 10px';
+    searchButton.style.backgroundColor = '#4b4b4b'; // same background color as minimize button
+    searchButton.style.color = 'white';
+    searchButton.style.border = 'none';
     searchButton.addEventListener('click', () => {
         const url = input.value;
         if (url) {
             openChatModal(url);
         }
     });
+    inputContainer.appendChild(searchButton);
+
+    chatModal.appendChild(inputContainer);
 
     toggleChatButton.addEventListener('click', () => {
         if (chatModalVisible) {
