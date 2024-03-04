@@ -4,7 +4,7 @@ let chatModalVisible = false;
 
 (async () => {
     // Additional or modified code for integration
-    const chatModalUrl = "YOUR_CHAT_MODAL_URL";  // Replace with the actual chat modal URL
+    const chatModalUrl = "https://www.perplexity.ai/";  // Replace with the actual chat modal URL
 
     const toggleChatButton = document.createElement('button');
     toggleChatButton.innerText = 'Open Chat';
