@@ -4,9 +4,6 @@ let chatModalVisible = false; let chatModal;
 
 (async () => { const chatModalUrl = "https://www.blackbox.ai/";
 
-Edit
-Full Screen
-Copy code
 const toggleChatButton = document.createElement('button');
 toggleChatButton.innerText = 'Open Chat';
 toggleChatButton.id = 'toggleChatButton';
@@ -36,10 +33,6 @@ function disableDarkMode() { document.body.classList.remove('dark-mode'); chatMo
 
 function createChatModal(chatUrl) { chatModal = document.createElement('div'); chatModal.id = 'chatModal'; chatModal.style.position = 'fixed'; chatModal.style.top = '50%'; chatModal.style.left = '50%'; chatModal.style.transform = 'translate(-50%, -50%)'; chatModal.style.width = '768px'; chatModal.style.height = '432px'; chatModal.style.zIndex = '10000'; chatModal.style.backgroundColor = '#2b2b2b'; // Changed background color to a dark color chatModal.style.borderRadius = '10px'; chatModal.style.overflow = 'hidden';
 
-Edit
-Full Screen
-Copy code
-// Added class 'dark-mode' to draggableArea
 const draggableArea = document.createElement("div");
 draggableArea.className = 'dark-mode';
 draggableArea.style.width = "100%";
