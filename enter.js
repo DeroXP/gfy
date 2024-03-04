@@ -31,13 +31,27 @@ function openChatModal(chatUrl) {
     }
     chatModal.style.display = 'block';
     document.getElementById('toggleChatButton').innerText = 'Close Chat';
+    enableDarkMode();
 }
 
 function closeChatModal() {
     if (chatModal) {
         chatModal.style.display = 'none';
         document.getElementById('toggleChatButton').innerText = 'Open Chat';
+        disableDarkMode();
     }
+}
+
+// Added function to enable dark mode
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+    chatModal.classList.add('dark-mode');
+}
+
+// Added function to disable dark mode
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
+    chatModal.classList.remove('dark-mode');
 }
 
 function createChatModal(chatUrl) {
@@ -50,15 +64,17 @@ function createChatModal(chatUrl) {
     chatModal.style.width = '768px';
     chatModal.style.height = '432px';
     chatModal.style.zIndex = '10000';
-    chatModal.style.backgroundColor = '#fff';
+    chatModal.style.backgroundColor = '#2b2b2b'; // Changed background color to a dark color
     chatModal.style.borderRadius = '10px';
     chatModal.style.overflow = 'hidden';
 
+    // Added class 'dark-mode' to draggableArea
     const draggableArea = document.createElement("div");
+    draggableArea.className = 'dark-mode';
     draggableArea.style.width = "100%";
     draggableArea.style.height = "20px";
     draggableArea.style.cursor = "move";
-    draggableArea.style.backgroundColor = "#ddd";
+    draggableArea.style.backgroundColor = "#4b4b4b"; // Changed background color to a dark color
     draggableArea.style.position = "absolute";
     draggableArea.style.top = "0";
     draggableArea.style.left = "0";
@@ -77,7 +93,7 @@ function createChatModal(chatUrl) {
 
     document.addEventListener("mousemove", (e) => {
         if (isDragging) {
-            const x = Math.max(0, Math.min(e.clientX - offsetX, window.innerWidth - chatModal.clientWidth));
+            const x = Math.max(0, Math.min(e.clientX - offsetX, window.innerWidth - chatdiv>clientWidth));
             const y = Math.max(0, Math.min(e.clientY - offsetY, window.innerHeight - chatModal.clientHeight));
             chatModal.style.left = `${x}px`;
             chatModal.style.top = `${y}px`;
@@ -91,24 +107,24 @@ function createChatModal(chatUrl) {
     chatModal.appendChild(draggableArea);
 
     const minimizeButton = document.createElement('button');
-        minimizeButton.innerText = 'Minimize';
-        minimizeButton.style.position = 'absolute';
-        minimizeButton.style.top = '0';
-        minimizeButton.style.right = '50px';
-        minimizeButton.style.padding = '5px 10px';
-        minimizeButton.style.backgroundColor = '#f0f0f0';
-        minimizeButton.style.border = 'none';
-        minimizeButton.style.cursor = 'pointer';
-        minimizeButton.style.borderTopRightRadius = '10px';
-    
-        function minimizeChatModal() {
+    minimizeButton.innerText = 'Minimize';
+    minimizeButton.style.position = 'absolute';
+    minimizeButton.style.top = '0';
+    minimizeButton.style.right = '50px';
+    minimizeButton.style.padding = '5px 10px';
+    minimizeButton.style.backgroundColor = '#4b4b4b'; // Changed background color to a dark color
+    minimizeButton.style.border = 'none';
+    minimizeButton.style.cursor = 'pointer';
+    minimizeButton.style.borderTopRightRadius = '10px';
+
+    function minimizeChatModal() {
         chatModal.style.bottom = '10px';
         chatModal.style.left = 'calc(100% - 80px)';
         chatModal.style.width = '80px';
         chatModal.style.height = '80px';
         minimizeButton.style.display = 'none';
     }
-    
+
     minimizeButton.addEventListener('click', () => {
         if (!chatModal.classList.contains('minimized')) {
             minimizeChatModal();
@@ -132,7 +148,7 @@ function createChatModal(chatUrl) {
     closeChatButton.style.top = '0';
     closeChatButton.style.right = '0';
     closeChatButton.style.padding = '5px 10px';
-    closeChatButton.style.backgroundColor = '#f0f0f0';
+    closeChatButton.style.backgroundColor = '#4b4b4b'; // Changed background color to a dark color
     closeChatButton.style.border = 'none';
     closeChatButton.style.cursor = 'pointer';
     closeChatButton.style.borderTopRightRadius = '10px';
