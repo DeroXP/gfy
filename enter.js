@@ -93,13 +93,13 @@ function createChatModal(chatUrl) {
     const minimizeButton = document.createElement('button');
     minimizeButton.innerText = 'Minimize';
     minimizeButton.style.position = 'absolute';
-    minimizeButton.style.bottom = '10px';
-    minimizeButton.style.right = '10px';
+    minimizeButton.style.top = '0';
+    minimizeButton.style.right = '50px';
     minimizeButton.style.padding = '5px 10px';
     minimizeButton.style.backgroundColor = '#f0f0f0';
     minimizeButton.style.border = 'none';
     minimizeButton.style.cursor = 'pointer';
-    minimizeButton.style.borderRadius = '5px';
+    minimizeButton.style.borderTopRightRadius = '10px';
 
     minimizeButton.addEventListener('click', () => {
         chatModal.style.bottom = '10px';
