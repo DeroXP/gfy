@@ -54,28 +54,28 @@ function createChatModal(chatUrl) {
     chatModal.style.borderRadius = '10px';
     chatModal.style.overflow = 'hidden';
 
-    const draggableArea = document.createElement('div');
-    draggableArea.style.width = '100%';
-    draggableArea.style.height = '20px';
-    draggableArea.style.cursor = 'move';
-    draggableArea.style.backgroundColor = '#ddd';
-    draggableArea.style.position = 'absolute';
-    draggableArea.style.top = '0';
-    draggableArea.style.left = '0';
-    draggableArea.style.borderTopLeftRadius = '10px';
-    draggableArea.style.borderTopRightRadius = '10px';
-    draggableArea.style.userSelect = 'none';
+    const draggableArea = document.createElement("div");
+    draggableArea.style.width = "100%";
+    draggableArea.style.height = "20px";
+    draggableArea.style.cursor = "move";
+    draggableArea.style.backgroundColor = "#ddd";
+    draggableArea.style.position = "absolute";
+    draggableArea.style.top = "0";
+    draggableArea.style.left = "0";
+    draggableArea.style.borderTopLeftRadius = "10px";
+    draggableArea.style.borderTopRightRadius = "10px";
+    draggableArea.style.userSelect = "none";
 
     let isDragging = false;
     let offsetX, offsetY;
 
-    draggableArea.addEventListener('mousedown', (e) => {
+    draggableArea.addEventListener("mousedown", (e) => {
         isDragging = true;
         offsetX = e.clientX - chatModal.getBoundingClientRect().left;
         offsetY = e.clientY - chatModal.getBoundingClientRect().top;
     });
 
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener("mousemove", (e) => {
         if (isDragging) {
             const x = e.clientX - offsetX;
             const y = e.clientY - offsetY;
@@ -84,7 +84,7 @@ function createChatModal(chatUrl) {
         }
     });
 
-    document.addEventListener('mouseup', () => {
+    document.addEventListener("mouseup", () => {
         isDragging = false;
     });
 
