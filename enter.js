@@ -91,22 +91,37 @@ function createChatModal(chatUrl) {
     chatModal.appendChild(draggableArea);
 
     const minimizeButton = document.createElement('button');
-    minimizeButton.innerText = 'Minimize';
-    minimizeButton.style.position = 'absolute';
-    minimizeButton.style.top = '0';
-    minimizeButton.style.right = '50px';
-    minimizeButton.style.padding = '5px 10px';
-    minimizeButton.style.backgroundColor = '#f0f0f0';
-    minimizeButton.style.border = 'none';
-    minimizeButton.style.cursor = 'pointer';
-    minimizeButton.style.borderTopRightRadius = '10px';
-
-    minimizeButton.addEventListener('click', () => {
+        minimizeButton.innerText = 'Minimize';
+        minimizeButton.style.position = 'absolute';
+        minimizeButton.style.top = '0';
+        minimizeButton.style.right = '50px';
+        minimizeButton.style.padding = '5px 10px';
+        minimizeButton.style.backgroundColor = '#f0f0f0';
+        minimizeButton.style.border = 'none';
+        minimizeButton.style.cursor = 'pointer';
+        minimizeButton.style.borderTopRightRadius = '10px';
+    
+        function minimizeChatModal() {
         chatModal.style.bottom = '10px';
         chatModal.style.left = 'calc(100% - 80px)';
         chatModal.style.width = '80px';
         chatModal.style.height = '80px';
         minimizeButton.style.display = 'none';
+    }
+    
+    minimizeButton.addEventListener('click', () => {
+        if (!chatModal.classList.contains('minimized')) {
+            minimizeChatModal();
+            chatModal.classList.add('minimized');
+        } else {
+            chatModal.style.bottom = '10px';
+            chatModal.style.left = '50%';
+            chatModal.style.transform = 'translateX(-50%)';
+            chatModal.style.width = '400px';
+            chatModal.style.height = '600px';
+            minimizeButton.style.display = 'block';
+            chatModal.classList.remove('minimized');
+        }
     });
 
     chatModal.appendChild(minimizeButton);
