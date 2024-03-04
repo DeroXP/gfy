@@ -3,15 +3,14 @@
 let chatModalVisible = false;
 
 (async () => {
-    // Additional or modified code for integration
-    const chatModalUrl = "https://www.perplexity.ai/";  // Replace with the actual chat modal URL
+    const chatModalUrl = "https://www.perplexity.ai/";
 
     const toggleChatButton = document.createElement('button');
     toggleChatButton.innerText = 'Open Chat';
     toggleChatButton.id = 'toggleChatButton';
     toggleChatButton.style.position = 'fixed';
     toggleChatButton.style.bottom = '10px';
-    toggleChatButton.style.right = '70px';  // Adjusted position to avoid overlap
+    toggleChatButton.style.right = '70px';
     toggleChatButton.style.zIndex = '9999';
     document.body.appendChild(toggleChatButton);
 
@@ -68,12 +67,11 @@ function createChatModal(chatUrl) {
     chatIframe.style.width = '100%';
     chatIframe.style.height = '100%';
     chatIframe.style.border = 'none';
-    chatIframe.sandbox = 'allow-same-origin allow-scripts allow-forms'; // Add this line
+    chatIframe.sandbox = 'allow-same-origin allow-scripts allow-forms';
 
     chatModal.appendChild(chatIframe);
 
     document.body.appendChild(chatModal);
 
-    // Show the chat modal
     chatModal.style.display = 'block';
 }
