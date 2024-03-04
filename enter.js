@@ -51,7 +51,7 @@ function createChatModal(chatUrl) {
     closeChatButton.style.cursor = 'pointer';
 
     closeChatButton.addEventListener('click', () => {
-        document.body.removeChild(chatModal);
+        document.body.removeChild(chatModal); // Remove the chat modal element
         document.getElementById('toggleChatButton').innerText = 'Open Chat';
         chatModalVisible = false;
     });
