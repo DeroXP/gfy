@@ -15,42 +15,27 @@ let chatModal;
     toggleChatButton.style.zIndex = '9999';
     document.body.appendChild(toggleChatButton);
 
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.id = 'searchInput';
-    searchInput.placeholder = 'Enter link here...';
-    searchInput.style.position = 'fixed';
-    searchInput.style.bottom = '10px';
-    searchInput.style.right = '150px';
-    searchInput.style.zIndex = '9999';
-    searchInput.style.width = '268px';
-    searchInput.style.height = '36px';
-    searchInput.style.padding = '5px 10px';
-    searchInput.style.borderRadius = '5px';
-    searchInput.style.border = '1px solid #ccc';
-    document.body.appendChild(searchInput);
-    
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter link here';
+    input.style.position = 'fixed';
+    input.style.bottom = '10px';
+    input.style.right = '150px';
+    input.style.zIndex = '9999';
+    document.body.appendChild(input);
+
     const searchButton = document.createElement('button');
     searchButton.innerText = 'Search';
-    searchButton.id = 'searchButton';
     searchButton.style.position = 'fixed';
     searchButton.style.bottom = '10px';
-    searchButton.style.right = '468px';
+    searchButton.style.right = '230px';
     searchButton.style.zIndex = '9999';
-    searchButton.style.width = '80px';
-    searchButton.style.height = '36px';
-    searchButton.style.backgroundColor = '#4b4b4b';
-    searchButton.style.color = '#fff';
-    searchButton.style.border = 'none';
-    searchButton.style.borderRadius = '5px';
-    searchButton.style.cursor = 'pointer';
     document.body.appendChild(searchButton);
-    
+
     searchButton.addEventListener('click', () => {
-        const link = document.getElementById('searchInput').value;
-        if (link) {
-            openChatModal(link);
-            document.getElementById('searchInput').value = '';
+        const url = input.value;
+        if (url) {
+            openChatModal(url);
         }
     });
 
