@@ -1,6 +1,7 @@
 "use strict";
 
 let chatModalVisible = false;
+let chatModal; // Reference to the chat modal element
 
 (async () => {
     const chatModalUrl = "https://www.perplexity.ai/";
@@ -16,18 +17,32 @@ let chatModalVisible = false;
 
     toggleChatButton.addEventListener('click', () => {
         if (chatModalVisible) {
-            document.getElementById('chatModal').style.display = 'none';
-            toggleChatButton.innerText = 'Open Chat';
+            closeChatModal();
         } else {
-            createChatModal(chatModalUrl);
-            toggleChatButton.innerText = 'Close Chat';
+            openChatModal(chatModalUrl);
         }
         chatModalVisible = !chatModalVisible;
     });
 })();
 
+// Chat Modal Function
+function openChatModal(chatUrl) {
+    if (!chatModal) {
+        createChatModal(chatUrl);
+    }
+    chatModal.style.display = 'block';
+    document.getElementById('toggleChatButton').innerText = 'Close Chat';
+}
+
+function closeChatModal() {
+    if (chatModal) {
+        chatModal.style.display = 'none';
+        document.getElementById('toggleChatButton').innerText = 'Open Chat';
+    }
+}
+
 function createChatModal(chatUrl) {
-    const chatModal = document.createElement('div');
+    chatModal = document.createElement('div');
     chatModal.id = 'chatModal';
     chatModal.style.position = 'fixed';
     chatModal.style.top = '50%';
@@ -50,11 +65,7 @@ function createChatModal(chatUrl) {
     closeChatButton.style.border = 'none';
     closeChatButton.style.cursor = 'pointer';
 
-    closeChatButton.addEventListener('click', () => {
-        document.body.removeChild(chatModal); // Remove the chat modal element
-        document.getElementById('toggleChatButton').innerText = 'Open Chat';
-        chatModalVisible = false;
-    });
+    closeChatButton.addEventListener('click', closeChatModal);
 
     chatModal.appendChild(closeChatButton);
 
@@ -71,6 +82,4 @@ function createChatModal(chatUrl) {
     chatModal.appendChild(chatIframe);
 
     document.body.appendChild(chatModal);
-
-    chatModal.style.display = 'block';
 }
