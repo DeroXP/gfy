@@ -42,13 +42,11 @@ function closeChatModal() {
     }
 }
 
-// Added function to enable dark mode
 function enableDarkMode() {
     document.body.classList.add('dark-mode');
     chatModal.classList.add('dark-mode');
 }
 
-// Added function to disable dark mode
 function disableDarkMode() {
     document.body.classList.remove('dark-mode');
     chatModal.classList.remove('dark-mode');
