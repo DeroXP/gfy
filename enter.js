@@ -4,7 +4,7 @@ let chatModalVisible = false;
 let chatModal;
 
 (async () => {
-    const chatModalUrl = "https://copilot.microsoft.com/";
+    const chatModalUrl = "https://www.blackbox.ai/";
 
     const toggleChatButton = document.createElement('button');
     toggleChatButton.innerText = 'Open Chat';
