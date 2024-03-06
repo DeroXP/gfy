@@ -5,7 +5,7 @@ let chatModalVisible = false;
 let chatModal;
 
 (async () => {
-    const chatModalUrl = "https://www.blackbox.ai/";
+    const chatModalUrl = "https://www.perplexity.ai/";
 
     const toggleChatButton = document.createElement('button');
     toggleChatButton.innerText = 'Open Chat';
