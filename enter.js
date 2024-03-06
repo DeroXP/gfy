@@ -1,60 +1,93 @@
-const trustedScript = new Function("return `" + `
+const trustedScript = new Function("return " + );
 "use strict";
 
-let chatModalVisible = false; let chatModal;
+let chatModalVisible = false;
+let chatModal;
 
-(async () => { const chatModalUrl = "https://www.blackbox.ai/";
+(async () => {
+    const chatModalUrl = "https://www.blackbox.ai/";
 
-const toggleChatButton = document.createElement('button');
-toggleChatButton.innerText = 'Open Chat';
-toggleChatButton.id = 'toggleChatButton';
-toggleChatButton.style.position = 'fixed';
-toggleChatButton.style.bottom = '10px';
-toggleChatButton.style.right = '70px';
-toggleChatButton.style.zIndex = '9999';
-document.body.appendChild(toggleChatButton);
+    const toggleChatButton = document.createElement('button');
+    toggleChatButton.innerText = 'Open Chat';
+    toggleChatButton.id = 'toggleChatButton';
+    toggleChatButton.style.position = 'fixed';
+    toggleChatButton.style.bottom = '10px';
+    toggleChatButton.style.right = '70px';
+    toggleChatButton.style.zIndex = '9999';
+    document.body.appendChild(toggleChatButton);
 
-toggleChatButton.addEventListener('click', () => {
-    if (chatModalVisible) {
-        closeChatModal();
-    } else {
-        openChatModal(chatModalUrl);
-    }
-    chatModalVisible = !chatModalVisible;
-});
+    toggleChatButton.addEventListener('click', () => {
+        if (chatModalVisible) {
+            closeChatModal();
+        } else {
+            openChatModal(chatModalUrl);
+        }
+        chatModalVisible = !chatModalVisible;
+    });
 })();
 
-function openChatModal(chatUrl) { if (!chatModal) { createChatModal(chatUrl); } chatModal.style.display = 'block'; document.getElementById('toggleChatButton').innerText = 'Close Chat'; enableDarkMode(); }
+function openChatModal(chatUrl) {
+    if (!chatModal) {
+        createChatModal(chatUrl);
+    }
+    chatModal.style.display = 'block';
+    document.getElementById('toggleChatButton').innerText = 'Close Chat';
+    enableDarkMode();
+}
 
-function closeChatModal() { if (chatModal) { chatModal.style.display = 'none'; document.getElementById('toggleChatButton').innerText = 'Open Chat'; disableDarkMode(); } }
+function closeChatModal() {
+    if (chatModal) {
+        chatModal.style.display = 'none';
+        document.getElementById('toggleChatButton').innerText = 'Open Chat';
+        disableDarkMode();
+    }
+}
 
-function enableDarkMode() { document.body.classList.add('dark-mode'); chatModal.classList.add('dark-mode'); }
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+    chatModal.classList.add('dark-mode');
+}
 
-function disableDarkMode() { document.body.classList.remove('dark-mode'); chatModal.classList.remove('dark-mode'); }
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
+    chatModal.classList.remove('dark-mode');
+}
 
-function createChatModal(chatUrl) { chatModal = document.createElement('div'); chatModal.id = 'chatModal'; chatModal.style.position = 'fixed'; chatModal.style.top = '50%'; chatModal.style.left = '50%'; chatModal.style.transform = 'translate(-50%, -50%)'; chatModal.style.width = '768px'; chatModal.style.height = '432px'; chatModal.style.zIndex = '10000'; chatModal.style.backgroundColor = '#2b2b2b'; // Changed background color to a dark color chatModal.style.borderRadius = '10px'; chatModal.style.overflow = 'hidden';
+function createChatModal(chatUrl) {
+    chatModal = document.createElement('div');
+    chatModal.id = 'chatModal';
+    chatModal.style.position = 'fixed';
+    chatModal.style.top = '50%';
+    chatModal.style.left = '50%';
+    chatModal.style.transform = 'translate(-50%, -50%)';
+    chatModal.style.width = '768px';
+    chatModal.style.height = '432px';
+    chatModal.style.zIndex = '10000';
+    chatModal.style.backgroundColor = '#2b2b2b';
+    chatModal.style.borderRadius = '10px';
+    chatModal.style.overflow = 'hidden';
 
-const draggableArea = document.createElement("div");
-draggableArea.className = 'dark-mode';
-draggableArea.style.width = "100%";
-draggableArea.style.height = "20px";
-draggableArea.style.cursor = "move";
-draggableArea.style.backgroundColor = "#4b4b4b";
-draggableArea.style.position = "absolute";
-draggableArea.style.top = "0";
-draggableArea.style.left = "0";
-draggableArea.style.borderTopLeftRadius = "10px";
-draggableArea.style.borderTopRightRadius = "10px";
-draggableArea.style.userSelect = "none";
+    const draggableArea = document.createElement("div");
+    draggableArea.className = 'dark-mode';
+    draggableArea.style.width = "100%";
+    draggableArea.style.height = "20px";
+    draggableArea.style.cursor = "move";
+    draggableArea.style.backgroundColor = "#4b4b4b";
+    draggableArea.style.position = "absolute";
+    draggableArea.style.top = "0";
+    draggableArea.style.left = "0";
+    draggableArea.style.borderTopLeftRadius = "10px";
+    draggableArea.style.borderTopRightRadius = "10px";
+    draggableArea.style.userSelect = "none";
 
-let isDragging = false;
-let offsetX, offsetY;
+    let isDragging = false;
+    let offsetX, offsetY;
 
-draggableArea.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    offsetX = e.clientX - chatModal.getBoundingClientRect().left;
-    offsetY = e.clientY - chatModal.getBoundingClientRect().top;
-});
+    draggableArea.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - chatModal.getBoundingClientRect().left;
+        offsetY = e.clientY - chatModal.getBoundingClientRect().top;
+    });
 
 document.addEventListener("mousemove", (e) => {
     if (isDragging) {
