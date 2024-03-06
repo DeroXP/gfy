@@ -1,4 +1,4 @@
-const trustedScript = new Function("return " + );
+const trustedScript = new Function("return 1 + 1;");
 "use strict";
 
 let chatModalVisible = false;
