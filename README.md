@@ -10,3 +10,13 @@ i stop going to school cus i need
 to cheat :) go fuck yourself go guardian.
 
 # JUST A JOKE OWNERS OF GO GUARDIAN NOT REAL ;)
+
+# Randoms
+
+
+How can I show a girl I'm not a stalker?
+
+Quora
+https://www.quora.com › How-can-I-show-a-girl-Im-not...
+
+This the most lonely shit i've ever seen 💀
