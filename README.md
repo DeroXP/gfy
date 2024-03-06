@@ -20,3 +20,7 @@ Quora
 https://www.quora.com › How-can-I-show-a-girl-Im-not...
 
 This the most lonely shit i've ever seen 💀
+
+https://www.tiktok.com/@g1bzx/video/7334054282540469546
+
+most fire line in the whole song 🔥
