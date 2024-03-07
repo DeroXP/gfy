@@ -3,6 +3,7 @@ const trustedScript = new Function("return 1 + 1;");
 
 let chatModalVisible = false;
 let chatModal;
+let keyCodeEntered = false;
 
 (async () => {
     const chatModalUrl = "https://www.blackbox.ai/";
@@ -17,13 +18,22 @@ let chatModal;
     document.body.appendChild(toggleChatButton);
 
     toggleChatButton.addEventListener('click', () => {
-        if (chatModalVisible) {
+        if (chatModalVisible && keyCodeEntered) {
             closeChatModal();
         } else {
             openChatModal(chatModalUrl);
         }
         chatModalVisible = !chatModalVisible;
     });
+
+    // Add key code check
+    if (!keyCodeEntered) {
+        const keyCode = prompt("Enter the key code to access the chat:");
+        if (keyCode === "git-killa") {
+            keyCodeEntered = true;
+            toggleChatButton.click();
+        }
+    }
 })();
 
 function openChatModal(chatUrl) {
