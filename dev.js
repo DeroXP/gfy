@@ -4,7 +4,10 @@ const trustedScript = new Function("return 1 + 1;");
 let chatModalVisible = false;
 let chatModal;
 let keyCodeEntered = false;
-let chatUrl = "https://www.blackbox.ai/";
+
+let encodedChatUrl = btoa("https://www.blackbox.ai/");
+
+let chatUrl = atob(encodedChatUrl);
 
 function closeChatModal() {
     chatModal.style.display = 'none';
