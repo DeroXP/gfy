@@ -21,6 +21,16 @@ if (textarea && button) {
         }, index * delay);
     });
 
+    setTimeout(() => {
+        let event = new KeyboardEvent('keydown', {
+            bubbles: true,
+            cancelable: true,
+            keyCode: 190,
+            key: "."
+        });
+        textarea.dispatchEvent(event);
+    }, charArray.length * delay);
+
     // Simulate the user pressing the Enter key
     setTimeout(() => {
         let event = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: 13 });
