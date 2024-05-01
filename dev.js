@@ -6,11 +6,26 @@ let button = document.querySelector('.inline-flex.items-center.justify-center.ro
 
 // Check if the textarea and the button exist
 if (textarea && button) {
-    // Set the value of the textarea
-    textarea.value = 'Hello, can you understand me?';
+    let text = 'Hello, can you understand me?';
+    let charArray = text.split('');
+    let delay = 50; // adjust this value to change the typing speed
 
-    // Simulate a button click
-    button.click();
+    // Focus the textarea
+    textarea.focus();
+
+    charArray.forEach((char, index) => {
+        setTimeout(() => {
+            let event = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: char.charCodeAt(0) });
+            textarea.dispatchEvent(event);
+            textarea.value += char;
+        }, index * delay);
+    });
+
+    // Simulate the user pressing the Enter key
+    setTimeout(() => {
+        let event = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: 13 });
+        textarea.dispatchEvent(event);
+    }, charArray.length * delay);
 } else {
     console.log('Textarea or button not found');
 }
