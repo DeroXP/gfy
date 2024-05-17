@@ -22,6 +22,9 @@ Was made for students that don't give a shit to actually do their school work an
 
 **GFY**, uses [BlackBox](https://www.blackbox.ai/) as a website to connect to and source from in its open-sourced code, using blackbox inside of a tab already loaded into another website makes it so this is not trackable and cannot be founf inside of your search history no matter what.
 
-Okay thats it.
+### Actual Screenshot
+![Screenshot (193)](https://github.com/DeroXP/gfy/assets/96676237/31b1dd8e-9504-40ce-8e65-7707db42b845)
+
+### Donate (if you want)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/dexoVB?country.x=US&locale.x=en_US)
