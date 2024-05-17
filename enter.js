@@ -6,7 +6,7 @@ let chatModalUrl = "https://www.blackbox.ai/";
 
 (async () => {
     const toggleChatButton = document.createElement('button');
-    toggleChatButton.innerText = 'Open Chat';
+    toggleChatButton.innerText = 'Open';
     toggleChatButton.id = 'toggleChatButton';
     toggleChatButton.style.position = 'fixed';
     toggleChatButton.style.bottom = '10px';
@@ -29,14 +29,14 @@ function openChatModal(chatUrl) {
         createChatModal(chatUrl);
     }
     chatModal.style.display = 'block';
-    document.getElementById('toggleChatButton').innerText = 'Close Chat';
+    document.getElementById('toggleChatButton').innerText = 'Close';
     enableDarkMode();
 }
 
 function closeChatModal() {
     if (chatModal) {
         chatModal.style.display = 'none';
-        document.getElementById('toggleChatButton').innerText = 'Open Chat';
+        document.getElementById('toggleChatButton').innerText = 'Open';
         disableDarkMode();
     }
 }
