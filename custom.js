@@ -3,7 +3,7 @@
 
 let chatModalVisible = false;
 let chatModal;
-let chatModalUrl = "https://www.perplexity.ai/";
+let chatModalUrl = "https://www.meta.ai/";
 
 (async () => {
     const toggleChatButton = document.createElement('button');
