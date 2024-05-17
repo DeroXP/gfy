@@ -114,23 +114,21 @@ function createChatModal(chatUrl) {
     minimizeButton.style.borderTopRightRadius = '10px';
 
     function minimizeChatModal() {
-        chatModal.style.bottom = '10px';
-        chatModal.style.left = 'calc(100% - 80px)';
-        chatModal.style.width = '80px';
-        chatModal.style.height = '80px';
-        minimizeButton.style.display = 'none';
+        chatModal.style.bottom = '0';
+        chatModal.style.left = '50%';
+        chatModal.style.transform = 'translateX(-50%)';
+        minimizeButton.innerText = 'Maximize';
     }
-
+    
     minimizeButton.addEventListener('click', () => {
         if (!chatModal.classList.contains('minimized')) {
             minimizeChatModal();
             chatModal.classList.add('minimized');
         } else {
-            chatModal.style.bottom = '10px';
-            chatModal.style.left = '50%';
-            chatModal.style.transform = 'translateX(-50%)';
-            chatModal.style.width = '400px';
-            chatModal.style.height = '600px';
+            chatModal.style.bottom = null;
+            chatModal.style.left = null;
+            chatModal.style.transform = null;
+            minimizeButton.innerText = 'Minimize';
             minimizeButton.style.display = 'block';
             chatModal.classList.remove('minimized');
         }
