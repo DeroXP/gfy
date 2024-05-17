@@ -2,10 +2,9 @@
 
 let chatModalVisible = false;
 let chatModal;
+let chatModalUrl = "https://www.blackbox.ai/";
 
 (async () => {
-    const chatModalUrl = "https://www.blackbox.ai/";
-
     const toggleChatButton = document.createElement('button');
     toggleChatButton.innerText = 'Open Chat';
     toggleChatButton.id = 'toggleChatButton';
@@ -107,7 +106,7 @@ function createChatModal(chatUrl) {
     minimizeButton.innerText = 'Minimize';
     minimizeButton.style.position = 'absolute';
     minimizeButton.style.top = '0';
-    minimizeButton.style.right = '50px';
+    minimizeButton.style.right = '250px';
     minimizeButton.style.padding = '5px 10px';
     minimizeButton.style.backgroundColor = '#4b4b4b';
     minimizeButton.style.border = 'none';
@@ -139,6 +138,33 @@ function createChatModal(chatUrl) {
 
     chatModal.appendChild(minimizeButton);
 
+    const inputBar = document.createElement('input');
+    inputBar.type = 'text';
+    inputBar.placeholder = 'Enter URL';
+    inputBar.style.position = 'absolute';
+    inputBar.style.top = '0';
+    inputBar.style.right = '50px';
+    inputBar.style.width = '200px';
+    inputBar.style.padding = '5px';
+    inputBar.style.border = 'none';
+    inputBar.style.borderTopRightRadius = '10px';
+    inputBar.style.borderTopLeftRadius = '10px';
+    inputBar.style.backgroundColor = '#4b4b4b';
+    inputBar.style.color = '#fff';
+    inputBar.style.outline = 'none';
+
+    inputBar.addEventListener('change', () => {
+        let newUrl = inputBar.value.trim();
+        if (newUrl && !newUrl.startsWith('http://') && !newUrl.startsWith('https://')) {
+            newUrl = 'http://' + newUrl; // prepend 'http://' if missing
+        }
+        chatModalUrl = newUrl;
+        const chatIframe = document.getElementById('chatIframe');
+        chatIframe.src = chatModalUrl;
+    });
+
+    chatModal.appendChild(inputBar);
+
     const closeChatButton = document.createElement('button');
     closeChatButton.innerText = 'Close';
     closeChatButton.style.position = 'absolute';
@@ -156,6 +182,7 @@ function createChatModal(chatUrl) {
 
     const chatIframe = document.createElement('iframe');
     chatIframe.src = chatUrl;
+    chatIframe.id = 'chatIframe';
     chatIframe.style.position = 'absolute';
     chatIframe.style.top = '20px';
     chatIframe.style.left = '0';
