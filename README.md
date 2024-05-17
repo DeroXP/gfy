@@ -24,6 +24,10 @@ Was made for students that don't give a shit to actually do their school work an
 ### Actual Screenshot
 ![Screenshot (193)](https://github.com/DeroXP/gfy/assets/96676237/31b1dd8e-9504-40ce-8e65-7707db42b845)
 
+### Instructed Video
+
+https://github.com/DeroXP/gfy/assets/96676237/af5f7012-7736-45b3-9034-5ae1c400224f
 ### Donate (if you want)
+
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/dexoVB?country.x=US&locale.x=en_US)
