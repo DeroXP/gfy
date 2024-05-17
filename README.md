@@ -20,7 +20,7 @@ GoFuckYourself - also known as gfy:
 
 Was made for students that don't give a shit to actually do their school work and study for answers so an alternative... ai, and since some websites get blocked a alternative is **GFY** which can prevent a website from being blocked/tracked from your school.
 
-**GFY**, uses [BlackBox](https://www.blackbox.ai/) as a website to connect to and source from in its open-sourced code, using blackbox inside of a tab already loaded into another website makes it so this is not trackable and cannot be founf inside of your search history no matter what.
+**GFY**, uses [BlackBox](https://www.blackbox.ai/) as a website to connect to and source from in its open-sourced code, using blackbox inside of a tab already loaded into another website makes it so this is not trackable and cannot be found inside of your search history no matter what.
 
 ### Actual Screenshot
 ![Screenshot (193)](https://github.com/DeroXP/gfy/assets/96676237/31b1dd8e-9504-40ce-8e65-7707db42b845)
