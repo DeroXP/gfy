@@ -14,4 +14,4 @@ ChangeLog:
 
 Will be added something so you can be able to go into any website without it being blocked if its possible
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)]((https://paypal.me/dexoVB?country.x=US&locale.x=en_US))
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/dexoVB?country.x=US&locale.x=en_US)
