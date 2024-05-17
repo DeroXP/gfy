@@ -59,8 +59,8 @@ function createChatModal(chatUrl) {
     chatModal.style.top = '50%';
     chatModal.style.left = '50%';
     chatModal.style.transform = 'translate(-50%, -50%)';
-    chatModal.style.width = '768px';
-    chatModal.style.height = '432px';
+    chatModal.style.width = '960px';
+    chatModal.style.height = '540px';
     chatModal.style.zIndex = '10000';
     chatModal.style.backgroundColor = '#2b2b2b';
     chatModal.style.borderRadius = '10px';
