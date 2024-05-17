@@ -116,7 +116,7 @@ function createChatModal(chatUrl) {
     function minimizeChatModal() {
         chatModal.style.bottom = '0';
         chatModal.style.left = '50%';
-        chatModal.style.transform = 'translateX(-50%)';
+        chatModal.style.transform = 'translateY(100%)';
         minimizeButton.innerText = 'Maximize';
     }
     
