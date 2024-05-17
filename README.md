@@ -13,7 +13,7 @@ ChangeLog:
 
 Will be added something so you can be able to go into any website without it being blocked if its possible
 
-### Functions
+### Information
 
 GoFuckYourself - also known as gfy:
 
