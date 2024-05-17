@@ -1,5 +1,5 @@
 # GoFuckYourself
-If **GFY** doesn't work for you, or you doon't like it go [here](https://github.com/DeroXP/evading-school-blockers) for alternatives
+If **GFY** doesn't work for you, or you don't like it go [here](https://github.com/DeroXP/evading-school-blockers) for alternatives
 
 UPDATED
 
