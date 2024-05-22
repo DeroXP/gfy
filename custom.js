@@ -82,37 +82,39 @@ function disableDarkMode() {
 function createChatModal(chatUrl) {
     chatModal = document.createElement('div');
     chatModal.id = 'chatModal';
-    chatModal.className = 'github-style'; // Add GitHub style class
+    chatModal.className = 'github-style';
     chatModal.style.position = 'fixed';
     chatModal.style.top = '50%';
     chatModal.style.left = '50%';
     chatModal.style.transform = 'translate(-50%, -50%) scale(0.9)';
     chatModal.style.opacity = '0';
     chatModal.style.width = '700px';
-    chatModal.style.height = '500px'; // Reduce height for GitHub style
+    chatModal.style.height = '500px';
     chatModal.style.zIndex = '10000';
-    chatModal.style.backgroundColor = '#fff'; // White background
-    chatModal.style.borderRadius = '8px'; // Slightly rounded corners
+    chatModal.style.backgroundColor = '#fff';
+    chatModal.style.borderRadius = '8px';
     chatModal.style.overflow = 'hidden';
-    chatModal.style.boxShadow = '0px 8px 16px rgba(0, 0, 0, 0.1)'; // Lighter shadow
+    chatModal.style.boxShadow = '0px 8px 16px rgba(0, 0, 0, 0.1)';
     chatModal.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 
     const draggableArea = document.createElement("div");
     draggableArea.style.width = "100%";
     draggableArea.style.height = "30px";
     draggableArea.style.cursor = "move";
-    draggableArea.style.background = 'linear-gradient(90deg, #f6f8fa, #e1e4e8)'; // GitHub style gradient
+    draggableArea.style.background = 'linear-gradient(90deg, #f6f8fa, #e1e4e8)';
     draggableArea.style.position = "absolute";
     draggableArea.style.top = "0";
     draggableArea.style.left = "0";
-    draggableArea.style.borderTopLeftRadius = "8px"; // Slightly rounded top corners
+    draggableArea.style.borderTopLeftRadius = "8px";
     draggableArea.style.borderTopRightRadius = "8px";
     draggableArea.style.userSelect = "none";
     draggableArea.style.display = 'flex';
     draggableArea.style.alignItems = 'center';
     draggableArea.style.padding = '0 10px';
-    draggableArea.style.color = '#24292e'; // GitHub text color
-    draggableArea.innerText = 'Chat';
+    draggableArea.style.color = '#24292e';
+    draggableArea.innerText = 'GFY';
+    draggableArea.style.fontFamily = 'Roboto, sans-serif';
+    draggableArea.style.fontWeight = 'bold';
 
     let isDragging = false;
     let offsetX, offsetY;
@@ -142,22 +144,22 @@ function createChatModal(chatUrl) {
     minimizeButton.innerText = '➖';
     minimizeButton.style.position = 'absolute';
     minimizeButton.style.top = '5px';
-    minimizeButton.style.right = '10px'; // Adjusted position for GitHub style
+    minimizeButton.style.right = '10px';
     minimizeButton.style.padding = '5px 10px';
-    minimizeButton.style.backgroundColor = '#f6f8fa'; // Light background
-    minimizeButton.style.color = '#24292e'; // GitHub text color
+    minimizeButton.style.backgroundColor = '#f6f8fa';
+    minimizeButton.style.color = '#24292e';
     minimizeButton.style.border = 'none';
     minimizeButton.style.cursor = 'pointer';
     minimizeButton.style.borderRadius = '5px';
     minimizeButton.style.transition = 'background-color 0.3s ease, transform 0.3s ease';
 
     minimizeButton.addEventListener('mouseenter', () => {
-        minimizeButton.style.backgroundColor = '#e1e4e8'; // Lighter background on hover
+        minimizeButton.style.backgroundColor = '#e1e4e8';
         minimizeButton.style.transform = 'scale(1.1)';
     });
 
     minimizeButton.addEventListener('mouseleave', () => {
-        minimizeButton.style.backgroundColor = '#f6f8fa'; // Restore original background
+        minimizeButton.style.backgroundColor = '#f6f8fa';
         minimizeButton.style.transform = 'scale(1)';
     });
 
@@ -194,18 +196,18 @@ function createChatModal(chatUrl) {
     inputBar.style.padding = '5px';
     inputBar.style.border = 'none';
     inputBar.style.borderRadius = '5px';
-    inputBar.style.backgroundColor = '#f6f8fa'; // Light background
-    inputBar.style.color = '#24292e'; // GitHub text color
+    inputBar.style.backgroundColor = '#f6f8fa';
+    inputBar.style.color = '#24292e';
     inputBar.style.outline = 'none';
     inputBar.style.transition = 'background-color 0.3s ease, transform 0.3s ease';
 
     inputBar.addEventListener('mouseenter', () => {
-        inputBar.style.backgroundColor = '#e1e4e8'; // Lighter background on hover
+        inputBar.style.backgroundColor = '#e1e4e8';
         inputBar.style.transform = 'scale(1.1)';
     });
 
     inputBar.addEventListener('mouseleave', () => {
-        inputBar.style.backgroundColor = '#f6f8fa'; // Restore original background
+        inputBar.style.backgroundColor = '#f6f8fa';
         inputBar.style.transform = 'scale(1)';
     });
 
