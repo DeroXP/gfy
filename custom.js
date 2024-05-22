@@ -29,17 +29,25 @@ function getBackgroundColor() {
     toggleChatButton.style.display = 'flex';
     toggleChatButton.style.alignItems = 'center';
     toggleChatButton.style.justifyContent = 'center';
-    toggleChatButton.style.transition = 'transform 0.3s ease';
+    toggleChatButton.style.transition = 'transform 0.3s ease, background-color 0.3s ease';
     document.body.appendChild(toggleChatButton);
-
-    toggleChatButton.addEventListener('mouseenter', () => {
-        toggleChatButton.style.transform = 'scale(1.1)';
+    
+    toggleChatButton.addEventListener('mouseenter', (event) => {
+        const buttonRect = toggleChatButton.getBoundingClientRect();
+        const angle = Math.atan2(event.clientY - (buttonRect.top + buttonRect.height / 2), event.clientX - (buttonRect.left + buttonRect.width / 2));
+        toggleChatButton.style.transform = `scale(1.1) rotate(${angle}rad)`;
+        toggleChatButton.style.backgroundColor = lightenColor(getBackgroundColor(), 10);
+        toggleChatButton.style.boxShadow = '0px 8px 16px rgba(0, 0, 0, 0.3)';
+        toggleChatButton.classList.add('pulse');
     });
-
+    
     toggleChatButton.addEventListener('mouseleave', () => {
-        toggleChatButton.style.transform = 'scale(1)';
+        toggleChatButton.style.transform = 'scale(1) rotate(0rad)';
+        toggleChatButton.style.backgroundColor = getBackgroundColor();
+        toggleChatButton.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.3)';
+        toggleChatButton.classList.remove('pulse');
     });
-
+    
     toggleChatButton.addEventListener('click', () => {
         if (chatModalVisible) {
             closeChatModal();
@@ -48,6 +56,16 @@ function getBackgroundColor() {
         }
         chatModalVisible = !chatModalVisible;
     });
+    
+    function lightenColor(color, percent) {
+        var num = parseInt(color.replace('#',''),16),
+            amt = Math.round(2.55 * percent),
+            R = (num >> 16) + amt,
+            B = (num >> 8 & 0x00FF) + amt,
+            G = (num & 0x0000FF) + amt;
+    
+        return '#' + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (B<255?B<1?0:B:255)*0x100 + (G<255?G<1?0:G:255)).toString(16).slice(1);
+    }
 })();
 
 function openChatModal(chatUrl) {
