@@ -5,11 +5,8 @@ UPDATED
 
 ChangeLog:
 
-1. Added URL so you can do a custom serach to a new website, if blackbox is blocked.
-2. better minimization.
-3. optimized some stuff.
-4. fixed the bookmarklet, so it should be working even if inspect is blocked.
-5. also got rid of the password lol
+1. Overhauled UI
+2. Minimization changes
 
 Will be added something so you can be able to go into any website without it being blocked if its possible
 
