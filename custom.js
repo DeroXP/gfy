@@ -88,13 +88,31 @@ function closeChatModal() {
 }
 
 function enableDarkMode() {
+  const bodyBackgroundColor = getBackgroundColor();
+  const isLightColor = isColorLight(bodyBackgroundColor);
+  if (isLightColor) {
+    document.body.classList.add('light-mode');
+    chatModal.classList.add('light-mode');
+  } else {
     document.body.classList.add('dark-mode');
     chatModal.classList.add('dark-mode');
+  }
 }
 
 function disableDarkMode() {
-    document.body.classList.remove('dark-mode');
-    chatModal.classList.remove('dark-mode');
+  document.body.classList.remove('dark-mode');
+  document.body.classList.remove('light-mode');
+  chatModal.classList.remove('dark-mode');
+  chatModal.classList.remove('light-mode');
+}
+
+function isColorLight(color) {
+  const hexColor = color.replace('#', '');
+  const r = parseInt(hexColor.substr(0, 2), 16);
+  const g = parseInt(hexColor.substr(2, 2), 16);
+  const b = parseInt(hexColor.substr(4, 2), 16);
+  const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+  return brightness > 0.5;
 }
 
 function createChatModal(chatUrl) {
