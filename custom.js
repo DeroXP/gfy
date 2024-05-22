@@ -2,7 +2,7 @@
 
 let chatModalVisible = false;
 let chatModal;
-let chatModalUrl = "https://blobby-boi.github.io/blobrowser/";
+let chatModalUrl = "https://www.blackbox.ai/";
 
 (async () => {
     const toggleChatButton = document.createElement('button');
@@ -187,7 +187,7 @@ function createChatModal(chatUrl) {
     chatIframe.style.width = '100%';
     chatIframe.style.height = 'calc(100% - 20px)';
     chatIframe.style.border = 'none';
-    chatIframe.sandbox = "allow-same-origin allow-scripts allow-forms allow-popups";
+    //chatIframe.sandbox = "allow-same-origin allow-scripts allow-forms allow-popups";
     
     chatModal.appendChild(chatIframe);
 
