@@ -2,7 +2,7 @@
 
 let chatModalVisible = false;
 let chatModal;
-let chatModalUrl = "https://www.blackbox.ai/";
+let chatModalUrl
 
 function getBackgroundColor() {
     const bodyStyles = window.getComputedStyle(document.body);
@@ -312,7 +312,8 @@ function createChatModal(chatUrl) {
     chatModal.appendChild(inputBar);
 
     const chatIframe = document.createElement('iframe');
-    chatIframe.src = chatUrl;
+    chatModalUrl = "https://www.blackbox.ai/";
+    chatIframe.src = chatModalUrl;
     chatIframe.id = 'chatIframe';
     chatIframe.style.position = 'absolute';
     chatIframe.style.top = '30px';
