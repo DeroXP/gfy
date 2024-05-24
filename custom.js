@@ -36,7 +36,7 @@ function getBackgroundColor() {
         const buttonRect = toggleChatButton.getBoundingClientRect();
         const angle = Math.atan2(event.clientY - (buttonRect.top + buttonRect.height / 2), event.clientX - (buttonRect.left + buttonRect.width / 2));
         toggleChatButton.style.transform = `scale(1.1) rotate(${angle}rad)`;
-        toggleChatButton.style.backgroundColor = lightenColor(getBackgroundColor(), 10);
+        toggleChatButton.style.backgroundColor = lightenColor(getBackgroundColor(), 90);
         toggleChatButton.style.boxShadow = '0px 8px 16px rgba(0, 0, 0, 0.3)';
         toggleChatButton.classList.add('pulse');
     });
@@ -181,6 +181,41 @@ function createChatModal(chatUrl) {
     });
 
     chatModal.appendChild(draggableArea);
+
+    const darkModeButton = document.createElement('button');
+    darkModeButton.style.position = 'absolute';
+    darkModeButton.style.top = '1px';
+    darkModeButton.style.left = '40px';
+    darkModeButton.style.padding = '5px 10px';
+    darkModeButton.style.backgroundColor = '#f6f8fa';
+    darkModeButton.style.color = '#24292e';
+    darkModeButton.style.border = 'none';
+    darkModeButton.style.cursor = 'pointer';
+    darkModeButton.style.borderRadius = '50%';
+    darkModeButton.style.transition = 'background-color 0.3s ease, transform 0.3s ease';
+    darkModeButton.innerText = '☀️';
+
+    darkModeButton.addEventListener('mouseenter', () => {
+        darkModeButton.style.backgroundColor = '#e1e4e8';
+        darkModeButton.style.transform = 'scale(1.1)';
+    });
+
+    darkModeButton.addEventListener('mouseleave', () => {
+        darkModeButton.style.backgroundColor = '#f6f8fa';
+        darkModeButton.style.transform = 'scale(1)';
+    });
+
+    darkModeButton.addEventListener('click', () => {
+        if (document.body.classList.contains('dark-mode')) {
+            disableDarkMode();
+            darkModeButton.innerText = '☀️';
+        } else {
+            enableDarkMode();
+            darkModeButton.innerText = '🌙';
+        }
+    });
+
+    draggableArea.appendChild(darkModeButton);
 
     const minimizeButton = document.createElement('button');
     minimizeButton.innerText = '➖';
