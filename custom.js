@@ -93,9 +93,13 @@ function enableDarkMode() {
   if (isLightColor) {
     document.body.classList.add('light-mode');
     chatModal.classList.add('light-mode');
+    document.body.style.colorScheme = 'light';
+    chatModal.style.colorScheme = 'light';
   } else {
     document.body.classList.add('dark-mode');
     chatModal.classList.add('dark-mode');
+    document.body.style.colorScheme = 'dark';
+    chatModal.style.colorScheme = 'dark';
   }
 }
 
@@ -104,6 +108,8 @@ function disableDarkMode() {
   document.body.classList.remove('light-mode');
   chatModal.classList.remove('dark-mode');
   chatModal.classList.remove('light-mode');
+  document.body.style.colorScheme = '';
+  chatModal.style.colorScheme = '';
 }
 
 function isColorLight(color) {
