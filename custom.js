@@ -103,13 +103,22 @@ function enableDarkMode() {
   }
 }
 
+function forceEnableDM() {
+  document.body.classList.remove('light-mode');
+  document.body.classList.add('dark-mode');
+  chatModal.classList.remove('light-mode');
+  chatModal.classList.add('dark-mode');
+  document.body.style.colorScheme = 'dark';
+  chatModal.style.colorScheme = 'dark';
+}
+
 function disableDarkMode() {
   document.body.classList.remove('dark-mode');
-  document.body.classList.remove('light-mode');
+  document.body.classList.add('light-mode');
   chatModal.classList.remove('dark-mode');
-  chatModal.classList.remove('light-mode');
-  document.body.style.colorScheme = '';
-  chatModal.style.colorScheme = '';
+  chatModal.classList.add('light-mode');
+  document.body.style.colorScheme = 'light';
+  chatModal.style.colorScheme = 'light';
 }
 
 function isColorLight(color) {
@@ -191,7 +200,7 @@ function createChatModal(chatUrl) {
     darkModeButton.style.color = '#24292e';
     darkModeButton.style.border = 'none';
     darkModeButton.style.cursor = 'pointer';
-    darkModeButton.style.borderRadius = '50%';
+    darkModeButton.style.borderRadius = '100%';
     darkModeButton.style.transition = 'background-color 0.3s ease, transform 0.3s ease';
     darkModeButton.innerText = '☀️';
 
@@ -210,7 +219,7 @@ function createChatModal(chatUrl) {
             disableDarkMode();
             darkModeButton.innerText = '☀️';
         } else {
-            enableDarkMode();
+            forceEnableDM();
             darkModeButton.innerText = '🌙';
         }
     });
