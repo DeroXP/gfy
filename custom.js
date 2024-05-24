@@ -298,14 +298,15 @@ function createChatModal(chatUrl) {
         inputBar.style.transform = 'scale(1)';
     });
 
-    inputBar.addEventListener('change', () => {
-        let newUrl = inputBar.value.trim();
-        if (newUrl && !newUrl.startsWith('http://') && !newUrl.startsWith('https://')) {
-            newUrl = 'http://' + newUrl; // prepend 'http://' if missing
-        }
-        chatModalUrl = newUrl;
-        const chatIframe = document.getElementById('chatIframe');
-        chatIframe.src = chatModalUrl;
+    inputBar.addEventListener('input', () => {
+      let newUrl = inputBar.value.trim();
+      if (!newUrl.startsWith('http://') && !newUrl.startsWith('https://')) {
+        newUrl = 'https://' + newUrl; // prepend 'https://' if missing
+        inputBar.value = newUrl;
+      }
+      chatModalUrl = newUrl;
+      const chatIframe = document.getElementById('chatIframe');
+      chatIframe.src = chatModalUrl;
     });
 
     chatModal.appendChild(inputBar);
