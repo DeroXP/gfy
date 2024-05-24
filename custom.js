@@ -219,6 +219,7 @@ function createChatModal(chatUrl) {
             disableDarkMode();
             darkModeButton.innerText = '☀️';
         } else {
+            enableDarkMode();
             forceEnableDM();
             darkModeButton.innerText = '🌙';
         }
