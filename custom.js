@@ -1,4 +1,4 @@
-edp"use strict";
+"use strict";
 
 (async () => {
     let chatModalVisible = false;
