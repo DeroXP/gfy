@@ -324,5 +324,17 @@
         chatModal.appendChild(chatIframe);
 
         document.body.appendChild(chatModal);
+
+        document.addEventListener('click', (event) => {
+            if (!chatModal.contains(event.target) && event.target !== toggleChatButton && !chatIframe.contains(event.target)) {
+                if (chatModalVisible) {
+                    chatModal.style.opacity = '0.5';
+                }
+            } else {
+                if (chatModalVisible) {
+                    chatModal.style.opacity = '1';
+                }
+            }
+        });
     }
 })();
