@@ -252,7 +252,7 @@
         function minimizeChatModal() {
             chatModal.style.bottom = '0';
             chatModal.style.left = '50%';
-            chatModal.style.transform = 'translateY(80%)';
+            chatModal.style.transform = 'translateY(50%)';
             minimizeButton.innerText = '➕';
         }
 
