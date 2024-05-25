@@ -5,8 +5,9 @@ UPDATED
 
 ChangeLog:
 
-1. Overhauled UI
-2. Minimization changes
+1. Toggle between light-mode and dark-mode
+2. fixed url searching
+3. organized code for performance (kinda)
 
 Will be added something so you can be able to go into any website without it being blocked if its possible
 
