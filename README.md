@@ -5,9 +5,7 @@ UPDATED
 
 ChangeLog:
 
-1. Toggle between light-mode and dark-mode
-2. fixed url searching
-3. organized code for performance (kinda)
+1. eval in bookmark for people with blocked inspect
 
 Will be added something so you can be able to go into any website without it being blocked if its possible
 
