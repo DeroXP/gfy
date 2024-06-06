@@ -8,6 +8,6 @@
 6. [Perplexity Free](https://www.perplexity.ai/) **Perplexity has been an AI i've used for a while, and still use for school work. I'm pretty sure this model has been updated to be better because the responses would be very vague but know they're very straight foward and to the point. This has very accurate query's. (Grade usually over 90%)** 8.9/10
 7. [Google Gemini](https://gemini.google.com/) **Gemini is very acccurate on what it gives you for your answer and give you alot of prompt to gives (with a 50 to 80 prompt limit I think), but even though this model is all great it still has faults with innaccurate searches and answers to questions being completely off.** 7/10
 8. [ChatGPT 3.5 Turbo](https://chatgpt.com/) **Its very good  like you will mostly get a decent or execlent grade with this model, but it cannot go through the web or see files and can be very innaccurate espically with math. Otherwise if you want just a good enough grade or more this is definetly the model.** 6/10
-9. [WriteSonice](https://writesonic.com/) **This is very accurate and stuff, but this is way too orientated around money to them, like credits??? seroiusly bro just give us a limit or something.** 2/10
+9. [WriteSonic](https://writesonic.com/) **This is very accurate and stuff, but this is way too orientated around money to them, like credits??? seroiusly bro just give us a limit or something.** 2/10
 
 ### Thats all for now.
