@@ -1,6 +1,6 @@
 ### This is a very stupid goofy thing I wanted to make but this is mostly my opinion on things so no lets get onto the list
 
-1. [ChatGPT 4o](https://chatgpt.com/) **for obvious reasons (Recommeded 100%)** 10/10
+1. [ChatGPT 4o](https://chatgpt.com/) **for obvious reasons (Recommended 100%)** 10/10
 2. [Khoj](https://app.khoj.dev/) **This model is jam pack with stuff, But most great part about it is everytime I use it on test i get no less than a 96%. plus it has very accurate query's for searches** 10/10
 3. [Perplexity Ai Pro](https://www.perplexity.ai/) **This model has amazing search query's and gives up to a 100% grade chance, but the only problem i have against it is the cost of the pro searches, but otherwise amazing.** 9.5/10
 4. [Microsoft Copilot](https://copilot.microsoft.com/) **Although it is very limited espically if you don't have a microsoft account, it works very well with doing math problems, and very good search query's too. Usually get no less than 90% with copilot** 9.5/10
