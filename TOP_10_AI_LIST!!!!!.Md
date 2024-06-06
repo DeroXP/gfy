@@ -9,6 +9,6 @@
 7. [Google Gemini](https://gemini.google.com/) **Gemini is very acccurate on what it gives you for your answer and give you alot of prompt to gives (with a 50 to 80 prompt limit I think), but even though this model is all great it still has faults with innaccurate searches and answers to questions being completely off.** 7/10
 8. [Meta AI](https://www.meta.ai/) **Eh... barley ever used it so I don't really know much if it's good or not, but has helped me before.** 6.5/10
 9. [ChatGPT 3.5 Turbo](https://chatgpt.com/) **Its very good  like you will mostly get a decent or execlent grade with this model, but it cannot go through the web or see files and can be very innaccurate espically with math. Otherwise if you want just a good enough grade or more this is definetly the model.** 6/10
-10. [WriteSonic](https://writesonic.com/) **This is very accurate and stuff, but this is way too orientated around money to them, like credits??? seroiusly bro just give us a limit or something.** 2/10
+10. [WriteSonic](https://writesonic.com/) **This is accurate and stuff, but this is way too orientated around money to them, like credits??? seroiusly bro just give us a limit or something.** 2/10
 
 ### Thats all for now.
