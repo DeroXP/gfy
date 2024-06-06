@@ -5,7 +5,7 @@ UPDATED
 
 ChangeLog:
 
-1. eval in bookmark for people with blocked inspect
+1. GFY will be not working for a little while seems like its been patched. It will work again and will be updated, when it is working again, sorry.
 
 Will be added something so you can be able to go into any website without it being blocked if its possible
 
