@@ -5,7 +5,7 @@ UPDATED
 
 ChangeLog:
 
-1. GFY will be not working for a little while seems like its been patched. It will work again and will be updated, when it is working again, sorry.
+1. **GFY** may not be working for some people, if you have a newer updated chromebook computer it may not work for you. (not 100% sure about this, the issue came up very recently)
 
 Will be added something so you can be able to go into any website without it being blocked if its possible
 
