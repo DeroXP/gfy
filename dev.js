@@ -311,7 +311,7 @@
         chatModal.appendChild(inputBar);
 
         const chatIframe = document.createElement('iframe');
-        chatModalUrl = "https://www.blackbox.ai/";
+        chatModalUrl = "https://blobby-boi.github.io/blobrowser/";
         chatIframe.src = chatModalUrl;
         chatIframe.id = 'chatIframe';
         chatIframe.style.position = 'absolute';
