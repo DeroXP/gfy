@@ -27,6 +27,7 @@
     toggleChatButton.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.3)';
     toggleChatButton.style.fontSize = '24px';
     toggleChatButton.style.display = 'flex';
+    toggleChatButton.style.opacity = '0.5';
     toggleChatButton.style.alignItems = 'center';
     toggleChatButton.style.justifyContent = 'center';
     toggleChatButton.style.transition = 'transform 0.3s ease, background-color 0.3s ease';
@@ -38,6 +39,7 @@
         toggleChatButton.style.transform = `scale(1.1) rotate(${angle}rad)`;
         toggleChatButton.style.backgroundColor = lightenColor(getBackgroundColor(), 90);
         toggleChatButton.style.boxShadow = '0px 8px 16px rgba(0, 0, 0, 0.3)';
+        toggleChatButton.style.opacity = '1';
         toggleChatButton.classList.add('pulse');
     });
 
@@ -45,6 +47,7 @@
         toggleChatButton.style.transform = 'scale(1) rotate(0rad)';
         toggleChatButton.style.backgroundColor = getBackgroundColor();
         toggleChatButton.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.3)';
+        toggleChatButton.style.opacity = '0.5';
         toggleChatButton.classList.remove('pulse');
     });
 
