@@ -19,7 +19,7 @@
 (function () {
   // ── Configuration ──────────────────────────────────────────────────
   const CONFIG = {
-    defaultUrl: "https://www.blackbox.ai/",
+    defaultUrl: "https://chromee-production.up.railway.app/vnc.html",
     modalWidth: 720,
     modalHeight: 520,
     toggleKey: "KeyC", // Ctrl+Shift+C
